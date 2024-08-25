@@ -23,10 +23,10 @@ export default function RootLayout({
           활성화되어 있지 않습니다!
         </noscript>
       </head>
-      <body className={`${inter.className} mx-auto bg-white`}>
+      <body className={`${inter.className} bg-white`}>
         <div className="mx-auto flex h-screen max-w-md flex-col items-center border-4 border-pink-700 bg-gray-200">
           <Navbar />
-          {children}
+          <main className="overflow-auto">{children}</main>
         </div>
       </body>
     </html>

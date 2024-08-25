@@ -1,5 +1,6 @@
 "use server";
 import client from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
  
 export const createTodo = async (formData: FormData) => {
   const title = formData.get("title") as string;
@@ -9,6 +10,7 @@ export const createTodo = async (formData: FormData) => {
       title,
     },
   });
+  revalidatePath('/todo')
 };
 
 export const getTodos = async () => {
